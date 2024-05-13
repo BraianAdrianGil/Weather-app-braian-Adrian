@@ -1,0 +1,32 @@
+.weather__welcome__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  color: white;
+  gap: 1rem;
+}
+.weather__welcome__container h1 {
+  font-weight: 700;
+}
+.weather__welcome__container p {
+  text-align: center;
+  padding: 10px;
+  color: rgb(171, 171, 171);
+  text-wrap: balance;
+  background-color: rgba(5, 5, 5, 0.426);
+  border-radius: 15px;
+  max-width: 250px;
+}
+.weather__welcome__container > div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.weather__welcome__container > div img {
+  height: 250px;
+  max-width: 100%;
+  object-fit: contain;
+}

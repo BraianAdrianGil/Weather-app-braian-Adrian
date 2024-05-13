@@ -1,0 +1,103 @@
+.footer__component {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.footer__component__socials__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.footer__component__socials__container h4 {
+  color: white;
+}
+.footer__component__socials__container ul {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+}
+.footer__component__socials__container ul li a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  color: white;
+  border-radius: 50%;
+  background-color: white;
+  scale: 1;
+  transition: 0.5s ease;
+}
+.footer__component__socials__container ul li a:hover {
+  transform: scale(1.3);
+  transition: 0.5s ease;
+}
+.footer__component__socials__container ul li a.github {
+  width: 20px;
+  height: 20px;
+}
+.footer__component__socials__container ul li a.linkedin {
+  border-radius: 15%;
+  width: 17px;
+  height: 17px;
+}
+.footer__component__socials__container ul li a.instagram {
+  border-radius: 25%;
+  width: 17px;
+  height: 17px;
+  overflow: hidden;
+}
+.footer__component__socials__container ul li a i {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  pointer-events: none;
+}
+.footer__component__socials__container ul li i.bxl-github {
+  color: black;
+}
+.footer__component__socials__container ul li i.bxl-linkedin-square {
+  background-color: rgb(255, 255, 255);
+  color: rgb(14, 60, 244);
+}
+.footer__component__socials__container ul li i.bxl-instagram {
+  background: linear-gradient(135deg, #c13584, #fd5956);
+  color: rgb(37, 34, 36);
+}
+.footer__component__contact__links__container {
+  width: 100%;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 10px;
+}
+.footer__component__contact__links__container span {
+  color: white;
+  font-weight: bold;
+}
+.footer__component__contact__links__container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(191, 181, 181);
+  text-decoration: none;
+}
