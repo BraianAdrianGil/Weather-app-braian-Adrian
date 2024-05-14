@@ -33,6 +33,7 @@ main {
   align-items: center;
 }
 .weather__search__error__container {
+  margin-top: 4rem;
   height: 350px;
 }
 .weather__search__error__container p {

@@ -3,21 +3,22 @@ import { API_KEY, BASE_URL, COUNTRY_CODES } from '../constants';
 import { kelvinToCelsius } from '../utils/kelvinToCelsius';
 import { kelvinToFahrenheit } from '../utils/kelvinToFahrenheit';
 import { getWindDirection } from '../utils/getWindDirection';
+import { formateObjectToLowerCase } from '../utils/formateObjectToLowerCase';
 
 export const getWeatherByQueryCity = async (city, country) => {
-  const countryCodesCopy = Object.keys({ ...COUNTRY_CODES });
-  const countryCodesCopyJoined = countryCodesCopy.map((countryIndex) =>
-    countryIndex.split('_').join(' ').toLocaleLowerCase()
-  );
+  const countryCodesCopy = { ...COUNTRY_CODES };
+  const countryCodesCopyLowerCase = formateObjectToLowerCase(countryCodesCopy);
 
-  const countryCodeAlpha2 = countryCodesCopyJoined.find(
-    country.toLocaleLowerCase()
-  );
-  console.log(countryCodeAlpha2);
+  const getCountryAlphaCode = (country) => {
+    const countryLowerCase = country?.split(' ').join(' ').toLowerCase();
+    const countryAlphaCodeFinded = countryCodesCopyLowerCase[countryLowerCase];
+    return countryAlphaCodeFinded;
+  };
 
-  // const countryAlpha2Code = COUNTRY_CODES.incl;
+  const countryAlphaCode = getCountryAlphaCode(country);
+
   try {
-    const querySearch = `${city},${country}`;
+    const querySearch = `${city},${countryAlphaCode}`;
     const res = await axios.get(BASE_URL, {
       params: {
         q: querySearch,

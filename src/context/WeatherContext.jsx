@@ -35,23 +35,52 @@ export const WeatherProvider = ({ children }) => {
 
   const loadSearchWeather = async (city, country) => {
     try {
-      if (!city) return;
+      if (!city && !country) return;
       if (searchCity.current === city && searchCountry.current === country)
         return;
 
-      const weatherSearchData = await getWeatherByQueryCity(city, country);
-
-      if (!weatherSearchData) {
-        setSearchErrorMessage(
-          'No pudimos encontrar la ciudad o el país con este nombre'
-        );
-        setWeather(null);
-        return;
+      if (!city && country) {
+        const weatherSearchData = await getWeatherByQueryCity(country);
+        if (!weatherSearchData) {
+          setSearchErrorMessage(
+            'No pudimos encontrar la ciudad o el país con este nombre'
+          );
+          setWeather(null);
+          return;
+        }
+        setWeather(weatherSearchData);
+        setSearchErrorMessage('');
+        searchCity.current = city;
+        searchCountry.current = country;
       }
-      setWeather(weatherSearchData);
-      setSearchErrorMessage('');
-      searchCity.current = city;
-      searchCountry.current = country;
+
+      if (city && !country) {
+        const weatherSearchData = await getWeatherByQueryCity(city);
+        if (!weatherSearchData) {
+          setSearchErrorMessage(
+            'No pudimos encontrar la ciudad o el país con este nombre'
+          );
+          setWeather(null);
+          return;
+        }
+        setWeather(weatherSearchData);
+        searchCity.current = city;
+        searchCountry.current = country;
+      }
+
+      if (city && country) {
+        const weatherSearchData = await getWeatherByQueryCity(city, country);
+        if (!weatherSearchData) {
+          setSearchErrorMessage(
+            'No pudimos encontrar la ciudad o el país con este nombre'
+          );
+          setWeather(null);
+          return;
+        }
+        setWeather(weatherSearchData);
+        searchCity.current = city;
+        searchCountry.current = country;
+      }
     } catch (error) {
       console.error(error);
     }

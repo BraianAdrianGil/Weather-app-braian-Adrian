@@ -9,10 +9,11 @@ const WeatherForm = () => {
   const handleWeatherSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const { citySearch, countrySearch } = Object.fromEntries(formData);
+    let { citySearch, countrySearch } = Object.fromEntries(formData);
     const countrySearchUppercase = countrySearch.toUpperCase();
     loadSearchWeather(citySearch, countrySearchUppercase);
     setMaxHeightDiv(false);
+    document.getElementById('form').reset();
   };
 
   const handleFocus = () => {
@@ -27,6 +28,7 @@ const WeatherForm = () => {
     <form
       className={`weather__form__container ${maxHeightDiv && 'expanded'}`}
       onSubmit={handleWeatherSubmit}
+      id='form'
     >
       <input
         type='text'
@@ -36,7 +38,6 @@ const WeatherForm = () => {
         id='cityInput'
         placeholder='Ciudad'
         aria-label='Ingresa la ciudad'
-        required
       />
 
       <input
@@ -46,7 +47,6 @@ const WeatherForm = () => {
         onBlur={handleBlur}
         placeholder='País'
         aria-label='Ingresa el país'
-        required
       />
       <button type='submit' onFocus={handleFocus} onBlur={handleBlur}>
         <i className='bx bx-search'></i>
