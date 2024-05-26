@@ -50,6 +50,7 @@ export const getWeather = async (lat, lon) => {
         main: data.weather[0].main,
         description: data.weather[0].description,
         icon: data.weather[0].icon,
+        timezone: data.timezone,
       },
       wind: {
         direction: getWindDirection(data.wind.deg),

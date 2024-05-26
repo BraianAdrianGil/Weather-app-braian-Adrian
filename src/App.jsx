@@ -12,6 +12,8 @@ function App() {
   const notCurrentPositionGranted =
     withoutPermissionMessage && !weather && !searchErrorMessage;
 
+  console.log(searchErrorMessage);
+
   return (
     <div className='App'>
       {/* LOADER======================================= */}

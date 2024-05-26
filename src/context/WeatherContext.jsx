@@ -40,7 +40,10 @@ export const WeatherProvider = ({ children }) => {
         return;
 
       if (!city && country) {
-        const weatherSearchData = await getWeatherByQueryCity(country);
+        const weatherSearchData = await getWeatherByQueryCity({
+          city: '',
+          country,
+        });
         if (!weatherSearchData) {
           setSearchErrorMessage(
             'No pudimos encontrar la ciudad o el país con este nombre'
@@ -50,12 +53,14 @@ export const WeatherProvider = ({ children }) => {
         }
         setWeather(weatherSearchData);
         setSearchErrorMessage('');
-        searchCity.current = city;
         searchCountry.current = country;
       }
 
       if (city && !country) {
-        const weatherSearchData = await getWeatherByQueryCity(city);
+        const weatherSearchData = await getWeatherByQueryCity({
+          city,
+          country: '',
+        });
         if (!weatherSearchData) {
           setSearchErrorMessage(
             'No pudimos encontrar la ciudad o el país con este nombre'
@@ -65,11 +70,14 @@ export const WeatherProvider = ({ children }) => {
         }
         setWeather(weatherSearchData);
         searchCity.current = city;
-        searchCountry.current = country;
+        setSearchErrorMessage(null);
       }
 
       if (city && country) {
-        const weatherSearchData = await getWeatherByQueryCity(city, country);
+        const weatherSearchData = await getWeatherByQueryCity({
+          city,
+          country,
+        });
         if (!weatherSearchData) {
           setSearchErrorMessage(
             'No pudimos encontrar la ciudad o el país con este nombre'
@@ -80,6 +88,7 @@ export const WeatherProvider = ({ children }) => {
         setWeather(weatherSearchData);
         searchCity.current = city;
         searchCountry.current = country;
+        setSearchErrorMessage(null);
       }
     } catch (error) {
       console.error(error);

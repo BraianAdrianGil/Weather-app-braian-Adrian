@@ -1,10 +1,32 @@
 import { Link } from 'react-router-dom';
 import { getWeatherImg } from '../../utils/getWeatherImg';
 import './WeatherCard.css';
+import { useEffect, useState } from 'react';
 
 const CurrentWeatherCard = ({ weather }) => {
-  const date = new Date();
-  const time = date.toLocaleTimeString([], { hour: 'numeric' });
+  const [time, setTime] = useState(null);
+  console.log(weather);
+
+  useEffect(() => {
+    if (weather && weather.weather && weather.weather.timezone !== undefined) {
+      const localTime = new Date();
+      const timezoneOffsetInMilliseconds = weather.weather.timezone * 1000;
+      const utcTime =
+        localTime.getTime() + localTime.getTimezoneOffset() * 60000;
+      const targetTime = new Date(utcTime + timezoneOffsetInMilliseconds);
+
+      if (!isNaN(targetTime.getTime())) {
+        const time = targetTime.toLocaleTimeString([], {
+          hour: 'numeric',
+        });
+        setTime(time);
+      } else {
+        console.error('Invalid Date calculated');
+      }
+    } else {
+      console.error('Timezone data is missing or invalid');
+    }
+  }, [weather]);
 
   const img = getWeatherImg(weather.weather.id, time);
 

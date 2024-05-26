@@ -34,7 +34,7 @@ export const getWeatherImg = (type, time) => {
     case 521:
     case 522:
     case 531:
-      if (time === 6 && time <= 18) return '/src/assets/rainy-day.png';
+      if (time > 6 && time <= 19) return '/src/assets/rainy-day.png';
       else return '/src/assets/rainy-night.png';
     // Snow ================================================
     // case 611-612-613-615-616-620-621-622 are snow with rain but we need get asset for those. Meanwhile we covered it with the current one.
@@ -48,7 +48,7 @@ export const getWeatherImg = (type, time) => {
     case 620:
     case 621:
     case 622:
-      if (time === 6 && time <= 18) return '/src/assets/snow.png';
+      if (time > 6 && time <= 19) return '/src/assets/snow.png';
       else return '/src/assets/snow-night.png';
     // Atmosphere ==============================================
     /*Mist */ case 701:
@@ -62,14 +62,14 @@ export const getWeatherImg = (type, time) => {
 
     // Clear ===================================================
     case 800:
-      if (time === 6 && time <= 18) return '/src/assets/sun.png';
+      if (time > 6 && time <= 19) return '/src/assets/sun.png';
       else return '/src/assets/crescent-moon.png';
 
     // Clouds ==================================================
     case 801:
     case 802:
     case 803:
-      if (time === 6 && time <= 18) return '/src/assets/cloudy-day.png';
+      if (time > 6 && time <= 19) return '/src/assets/cloudy-day.png';
       else return '/src/assets/cloudy-night.png';
 
     case 804:

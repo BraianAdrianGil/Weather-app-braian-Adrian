@@ -5,7 +5,7 @@ import { kelvinToFahrenheit } from '../utils/kelvinToFahrenheit';
 import { getWindDirection } from '../utils/getWindDirection';
 import { formateObjectToLowerCase } from '../utils/formateObjectToLowerCase';
 
-export const getWeatherByQueryCity = async (city, country) => {
+export const getWeatherByQueryCity = async ({ city, country }) => {
   const countryCodesCopy = { ...COUNTRY_CODES };
   const countryCodesCopyLowerCase = formateObjectToLowerCase(countryCodesCopy);
 
@@ -15,7 +15,7 @@ export const getWeatherByQueryCity = async (city, country) => {
     return countryAlphaCodeFinded;
   };
 
-  const countryAlphaCode = getCountryAlphaCode(country);
+  const countryAlphaCode = getCountryAlphaCode(country) ?? '';
 
   try {
     const querySearch = `${city},${countryAlphaCode}`;
@@ -35,6 +35,7 @@ export const getWeatherByQueryCity = async (city, country) => {
     }
 
     const data = await res.data;
+    console.log(data);
     const formattedData = {
       id: data.id,
       tempMain: {
@@ -68,6 +69,7 @@ export const getWeatherByQueryCity = async (city, country) => {
         main: data.weather[0].main,
         description: data.weather[0].description,
         icon: data.weather[0].icon,
+        timezone: data.timezone,
       },
       wind: {
         direction: getWindDirection(data.wind.deg),
