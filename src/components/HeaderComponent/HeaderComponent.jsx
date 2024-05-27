@@ -1,10 +1,11 @@
 import './HeaderComponent.css';
+import Logo from '../../assets/cloudy-day.png';
 
 const HeaderComponent = () => {
   return (
     <div className='header__div__container'>
       <img
-        src='../../assets/cloudy-day.png'
+        src={Logo}
         alt='Logo de la app'
         className='current_weather__header_img'
       />
