@@ -5,7 +5,7 @@ const HeaderComponent = () => {
     <div className='header__div__container'>
       <img
         src='/src/assets/cloudy-day.png'
-        alt=''
+        alt='Logo de la app'
         className='current_weather__header_img'
       />
       <h1>Weather App</h1>
