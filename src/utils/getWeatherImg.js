@@ -1,6 +1,16 @@
 import rainyThunderstormImg from '../assets/rainy-thunderstorm.png';
 import thunderstormImg from '../assets/thunderstorm.png';
 import rainyDayImg from '../assets/rainy-day.png';
+import rainyNightImg from '../assets/rainy-night.png';
+import snowImg from '../assets/snow.png';
+import snowNightImg from '../assets/snow-night.png';
+import smokeImg from '../assets/smoke-mist.png';
+import tornadoImg from '../assets/tornado.png';
+import clearDayImg from '../assets/sun.png';
+import clearNightImg from '../assets/crescent-moon.png';
+import cloudyDayImg from '../assets/cloudy-day.png';
+import cloudyNight from '../assets/cloudy-night.png';
+import cloudsImg from '../assets/clouds.png';
 
 export const getWeatherImg = (type, time) => {
   switch (type) {
@@ -12,12 +22,12 @@ export const getWeatherImg = (type, time) => {
     case 230:
     case 231:
     case 232:
-      return '/src/assets/rainy-thunderstorm.png';
+      return rainyThunderstormImg;
     // Thunderstorm ==========================================
     case 210:
     case 211:
     case 212:
-      return '/src/assets/thunderstorm.png';
+      return thunderstormImg;
     // Drizzle || Rain =======================================
     case 300:
     case 301:
@@ -39,7 +49,7 @@ export const getWeatherImg = (type, time) => {
     case 522:
     case 531:
       if (time > 6 && time <= 19) return rainyDayImg;
-      else return '/src/assets/rainy-night.png';
+      else return rainyNightImg;
     // Snow ================================================
     // case 611-612-613-615-616-620-621-622 are snow with rain but we need get asset for those. Meanwhile we covered it with the current one.
     case 600:
@@ -52,31 +62,31 @@ export const getWeatherImg = (type, time) => {
     case 620:
     case 621:
     case 622:
-      if (time > 6 && time <= 19) return '/src/assets/snow.png';
-      else return '/src/assets/snow-night.png';
+      if (time > 6 && time <= 19) return snowImg;
+      else return snowNightImg;
     // Atmosphere ==============================================
     /*Mist */ case 701:
     /*Smoke*/ case 711:
     /*Haze */ case 721:
     /*Fog  */ case 741:
-      return '/src/assets/smoke-mist.png';
+      return smokeImg;
 
     /*Tornado*/ case 781:
-      return '/src/assets/tornado.png';
+      return tornadoImg;
 
     // Clear ===================================================
     case 800:
-      if (time > 6 && time <= 19) return '/src/assets/sun.png';
-      else return '/src/assets/crescent-moon.png';
+      if (time > 6 && time <= 19) return clearDayImg;
+      else return clearNightImg;
 
     // Clouds ==================================================
     case 801:
     case 802:
     case 803:
-      if (time > 6 && time <= 19) return '/src/assets/cloudy-day.png';
-      else return '/src/assets/cloudy-night.png';
+      if (time > 6 && time <= 19) return cloudyDayImg;
+      else return cloudyNight;
 
     case 804:
-      return '/src/assets/clouds.png';
+      return cloudsImg;
   }
 };

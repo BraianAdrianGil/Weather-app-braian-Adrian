@@ -1,5 +1,7 @@
 import { getWeatherImg } from '../../utils/getWeatherImg';
 import useWeatherTime from '../../hooks/useWeatherTime';
+import humidityIcon from '../../assets/humidity-icon.png';
+import windIcon from '../../assets/wind-speed-icon.png';
 import './WeatherCard.css';
 
 const CurrentWeatherCard = ({ weather }) => {
@@ -25,7 +27,7 @@ const CurrentWeatherCard = ({ weather }) => {
           <ul className='weather__card__ul'>
             <li className='weather__card__li'>
               <div className='weather__card__li__img__container'>
-                <img src='/src/assets/humidity-icon.png' alt='' />
+                <img src={humidityIcon} alt='' />
               </div>
               <div className='weather__card__li__content'>
                 <span>{weather.tempMain.humidity}%</span>
@@ -35,10 +37,7 @@ const CurrentWeatherCard = ({ weather }) => {
 
             <li className='weather__card__li'>
               <div className='weather__card__li__img__container'>
-                <img
-                  src='/src/assets/wind-speed-icon.png'
-                  alt='Wind speed icon'
-                />
+                <img src={windIcon} alt='Wind speed icon' />
               </div>
               <div className=' weather__card__li__content'>
                 <span>{weather.wind.speed} Km/h</span>
