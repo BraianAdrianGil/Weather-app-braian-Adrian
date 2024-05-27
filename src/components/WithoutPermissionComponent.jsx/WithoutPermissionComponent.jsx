@@ -1,3 +1,4 @@
+import sunGlassesImg from '../../assets/sun-glasses.png';
 import './WithoutPermissionComponent.css';
 
 const WithoutPermissionComponent = () => {
@@ -8,7 +9,7 @@ const WithoutPermissionComponent = () => {
         Busca la ciudad o el país que quieras para saber como esta ahi afuera
       </p>
       <div>
-        <img src='/src/assets/sun-glasses.png' alt='Un sol con anteojos.' />
+        <img src={sunGlassesImg} alt='Un sol con anteojos.' />
       </div>
     </div>
   );
