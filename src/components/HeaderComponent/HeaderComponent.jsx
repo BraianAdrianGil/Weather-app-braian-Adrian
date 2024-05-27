@@ -4,7 +4,7 @@ const HeaderComponent = () => {
   return (
     <div className='header__div__container'>
       <img
-        src='/src/assets/cloudy-day.png'
+        src='/assets/cloudy-day.png'
         alt=''
         className='current_weather__header_img'
       />
