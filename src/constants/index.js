@@ -1,5 +1,10 @@
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const API_KEY = import.meta.env.VITE_OPEN_WEATHER_API;
+const CLOUDY_BACKGROUND =
+  'linear-gradient(to top left, rgb(70, 70, 70),rgb(140, 134, 134), rgb(202, 202, 202) 115%)';
+
+const CLEAR_BACKGROUND =
+  'linear-gradient(to top left, rgb(8, 16, 92), rgb(27, 103, 196), rgb(255, 255, 255) 115%)';
 const COUNTRY_CODES = {
   Afganistán: 'AF',
   Albania: 'AL',
@@ -197,4 +202,10 @@ const COUNTRY_CODES = {
   Zimbabue: 'ZW',
 };
 
-export { BASE_URL, API_KEY, COUNTRY_CODES };
+export {
+  BASE_URL,
+  API_KEY,
+  COUNTRY_CODES,
+  CLOUDY_BACKGROUND,
+  CLEAR_BACKGROUND,
+};

@@ -26,7 +26,7 @@ const WeatherForm = () => {
 
   return (
     <form
-      className={`weather__form__container ${maxHeightDiv && 'expanded'}`}
+      className={`weather__form__container  ${maxHeightDiv && 'expanded'}`}
       onSubmit={handleWeatherSubmit}
       id='form'
     >

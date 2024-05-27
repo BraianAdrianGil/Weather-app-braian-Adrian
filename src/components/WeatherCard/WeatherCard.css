@@ -5,7 +5,7 @@
   align-items: center;
   width: 100%;
   gap: 0.5rem;
-  margin-top: 2.5rem;
+  margin-top: 6rem;
 }
 /* weather card header===================================================== */
 .weather_card__img_container {
@@ -19,6 +19,7 @@
   max-width: 100%;
   min-width: 200px;
   min-height: 120px;
+  max-height: 146px;
   object-fit: contain;
   object-position: top;
 }
@@ -87,48 +88,37 @@
   font-size: 10px;
   color: rgb(197, 193, 193);
 }
-/*Weather card footer======================================================= */
-.weather__card__footer {
-  margin-top: 1rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.weather__detail__link {
-  max-width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  text-decoration: none;
-  color: rgb(203, 198, 198);
-  font-weight: 400;
-  gap: 5px;
-}
-.weather__detail__link span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 18px;
-  font-weight: 700;
-  transform: translateX(0);
-  transition: 0.5s ease;
-}
 
-.weather__detail__link:hover span {
-  color: rgb(255, 179, 0);
-  animation: advance 1s infinite;
-  transition: 0.5s ease;
-}
-/* KEYFRAMES=========================================== */
-@keyframes advance {
-  0%,
-  100% {
-    transform: translateX(0);
+/* MEDIA QUERIES======================================= */
+@media screen and (min-width: 580px) {
+  .weather_card__general__container {
+    flex-direction: row;
+    gap: 3rem;
+    margin-top: 8rem;
   }
-  50% {
-    transform: translateX(5px);
+
+  .weather_card__img_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 280px;
+  }
+  .weather_card__img_container img {
+    max-width: 100%;
+    min-width: unset;
+    min-height: 180px;
+    object-fit: contain;
+    object-position: center;
+  }
+  .weather__card__main {
+    margin-top: 0;
+    gap: 2.5rem;
+  }
+  .weather__card__first__dates h2 {
+    font-size: 60px;
+  }
+  .weather_card__img_container img {
+    max-height: unset;
   }
 }

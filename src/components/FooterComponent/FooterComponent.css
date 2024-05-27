@@ -101,3 +101,14 @@
   color: rgb(191, 181, 181);
   text-decoration: none;
 }
+
+/* MEDIA QUERIES===================================== */
+/* 580PX */
+@media screen and (min-width: 578px) {
+  .footer__component__socials__container h4 {
+    font-size: 18px;
+  }
+  .footer__component__contact__links__container {
+    font-size: 12px;
+  }
+}

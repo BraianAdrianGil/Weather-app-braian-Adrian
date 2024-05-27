@@ -35,7 +35,7 @@ export const getWeatherByQueryCity = async ({ city, country }) => {
     }
 
     const data = await res.data;
-    console.log(data);
+
     const formattedData = {
       id: data.id,
       tempMain: {

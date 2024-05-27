@@ -1,7 +1,7 @@
 .weather__form__container {
   padding: 20px 15px;
   position: absolute;
-  top: -45px;
+  top: -9.5%;
   z-index: 1;
   width: 100%;
   max-width: 210px;
@@ -19,7 +19,7 @@
   background: rgba(255, 255, 255, 0.126);
   backdrop-filter: blur(25px);
   box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.647);
-  height: 38%;
+  height: 32%;
   transition: 0.5s ease;
 }
 .weather__form__container input {
@@ -64,4 +64,16 @@
 }
 .weather__form__container input:focus + button {
   transition: 0.5s ease;
+}
+
+/* MEDIA QUERIES============================== */
+@media screen and (min-width: 580px) {
+  .weather__form__container {
+    z-index: 1;
+    height: 50px;
+    max-width: 260px;
+  }
+  .weather__form__container.expanded {
+    height: 150px;
+  }
 }

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import WeatherDetail from '../pages/WeatherDetail';
+import WeatherDetail from '../pages/WeatherDetail/WeatherDetail.jsx';
 import App from '../App';
 
 export const router = createBrowserRouter([
