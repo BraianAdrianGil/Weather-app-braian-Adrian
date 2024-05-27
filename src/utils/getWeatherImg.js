@@ -1,3 +1,7 @@
+import rainyThunderstormImg from '../assets/rainy-thunderstorm.png';
+import thunderstormImg from '../assets/thunderstorm.png';
+import rainyDayImg from '../assets/rainy-day.png';
+
 export const getWeatherImg = (type, time) => {
   switch (type) {
     // Thunderstorm with rain====================
@@ -34,7 +38,7 @@ export const getWeatherImg = (type, time) => {
     case 521:
     case 522:
     case 531:
-      if (time > 6 && time <= 19) return '/src/assets/rainy-day.png';
+      if (time > 6 && time <= 19) return rainyDayImg;
       else return '/src/assets/rainy-night.png';
     // Snow ================================================
     // case 611-612-613-615-616-620-621-622 are snow with rain but we need get asset for those. Meanwhile we covered it with the current one.
